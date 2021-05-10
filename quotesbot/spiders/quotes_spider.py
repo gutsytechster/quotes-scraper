@@ -16,7 +16,7 @@ class QuotesSpider(scrapy.Spider):
             quote_item = QuoteItem(
                 quote=quote.css("span.text::text").get(),
                 author=quote.css("small.author::text").get(),
-                tags=quote.css("div.tags a.tag::text").getall()
+                tags=quote.css("div.tags a.tag::text").getall(),
             )
             yield quote_item
 

@@ -25,7 +25,7 @@ DOWNLOADER_MIDDLEWARES = {
 }
 SPIDER_MIDDLEWARES = {
     "scrapy_splash.SplashDeduplicateArgsMiddleware": 100,
-    'scrapy_autounit.AutounitMiddleware': 950,
+    "scrapy_autounit.AutounitMiddleware": 950,
 }
 ITEM_PIPELINES = {
     "quotesbot.pipelines.QuotePipeline": 300,
