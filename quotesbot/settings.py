@@ -27,6 +27,9 @@ SPIDER_MIDDLEWARES = {
     "scrapy_splash.SplashDeduplicateArgsMiddleware": 100,
     'scrapy_autounit.AutounitMiddleware': 950,
 }
+ITEM_PIPELINES = {
+    "quotesbot.pipelines.QuotePipeline": 300,
+}
 DUPEFILTER_CLASS = "scrapy_splash.SplashAwareDupeFilter"
 
 # Enable this whenever updating tests for the spider
