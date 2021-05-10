@@ -1,0 +1,5 @@
+[run]
+source = quotesbot/
+
+[report]
+show_missing = true
