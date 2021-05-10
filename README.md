@@ -33,10 +33,22 @@ A quote spider to scrape quotes from [quotes.toscrape.com/js/](https://quotes.to
     (scraper-env)$ scrapy crawl quotes -o quotes.json
     ```
 
+## Tests
+
+The project uses [Scrapy Autounit](https://github.com/scrapinghub/scrapy-autounit/) to test the spiders. To execute the test, run the below command
+```
+(scraper-env)$ python -m unittest discover autounit/tests/
+```
+It also uses [coverage](https://github.com/nedbat/coveragepy) to identify the code coverage. To get coverage details, run the below commands
+```
+(scraper-env)$ coverage run -m unittest discover autounit/tests/
+(scraper-env)$ coverage report
+```
+
 ## Details
 
 - The spider goes through each quotes pages, crawling through the link to next page.
-- To identify specific CSS selector, inspect the HTML via browser inspector and fetch quote details from each page.
+- To identify specific CSS selector, inspect the HTML via browser inspector and fetch quote details from each page. The data is then processed through an ItemPipeline.
 - The website is rendered dynamically by executing the JavaScript code. Hence, Splash is used here to execute the JavaScript to get the resulting HTML.
 - The spider fetches the following details corresponding to each quote
     - Quote Text
