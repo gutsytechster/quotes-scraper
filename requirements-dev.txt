@@ -1,2 +1,3 @@
 -r requirements.txt
 pre-commit==2.12.1
+scrapy_autounit==0.0.31

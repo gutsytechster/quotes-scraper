@@ -25,5 +25,9 @@ DOWNLOADER_MIDDLEWARES = {
 }
 SPIDER_MIDDLEWARES = {
     "scrapy_splash.SplashDeduplicateArgsMiddleware": 100,
+    'scrapy_autounit.AutounitMiddleware': 950,
 }
 DUPEFILTER_CLASS = "scrapy_splash.SplashAwareDupeFilter"
+
+# Enable this whenever updating tests for the spider
+AUTOUNIT_ENABLED = False
