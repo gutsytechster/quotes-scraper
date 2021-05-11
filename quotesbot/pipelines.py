@@ -1,7 +1,7 @@
-from itemadapter import ItemAdapter
+from itemadapter import ItemAdapter  # pragma: no cover
 
 
-class QuotePipeline:
+class QuotePipeline:  # pragma: no cover
     def process_item(self, item, spider):
         adapter = ItemAdapter(item)
         if adapter.get("quote"):
