@@ -1,4 +1,7 @@
 # Quotes Scraper
+
+[![Coverage Status](https://coveralls.io/repos/github/gutsytechster/quotes-scraper/badge.svg?branch=main)](https://coveralls.io/github/gutsytechster/quotes-scraper?branch=main) [![Build Status](https://travis-ci.org/gutsytechster/quotes-scraper.svg?branch=main)](https://travis-ci.org/gutsytechster/quotes-scraper)
+
 A quote spider to scrape quotes from [quotes.toscrape.com/js/](https://quotes.toscrape.com/js/)
 
 ## Setup
@@ -28,9 +31,9 @@ A quote spider to scrape quotes from [quotes.toscrape.com/js/](https://quotes.to
     ```
     (scraper-env)$ scrapy crawl quotes
     ```
-    If you want to save the output to a file, use `-o` option
+    If you want to save the output to a file, use `-O` option
     ```
-    (scraper-env)$ scrapy crawl quotes -o quotes.json
+    (scraper-env)$ scrapy crawl quotes -O quotes.json
     ```
 
 ## Tests
@@ -48,10 +51,10 @@ It also uses [coverage](https://github.com/nedbat/coveragepy) to identify the co
 ## Details
 
 - The spider goes through each quotes pages, crawling through the link to next page.
-- To identify specific CSS selector, inspect the HTML via browser inspector and fetch quote details from each page. The data is then processed through an ItemPipeline.
+- To identify specific CSS selector, inspect the HTML via browser inspector and fetch quote details from each page. The data is then processed through an `ItemPipeline`.
 - The website is rendered dynamically by executing the JavaScript code. Hence, Splash is used here to execute the JavaScript to get the resulting HTML.
 - The spider fetches the following details corresponding to each quote
     - Quote Text
     - Quote author
     - Tags
-- The data is kept in JSON format using the command above in [`quotes.json`](https://github.com/gutsytechster/quotes-scraper/blob/main/quotes.json) file.
+- The data has been kept in JSON format using the command above in [`quotes.json`](https://github.com/gutsytechster/quotes-scraper/blob/main/quotes.json) file.
